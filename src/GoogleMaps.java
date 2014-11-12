@@ -42,7 +42,7 @@ public class GoogleMaps {
         toolBar.add(zoomOutButton);
 
         JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         frame.add(browser.getView().getComponent(), BorderLayout.CENTER);
         frame.add(toolBar, BorderLayout.NORTH);
         frame.setSize(700, 500);

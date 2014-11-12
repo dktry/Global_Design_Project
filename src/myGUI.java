@@ -15,13 +15,21 @@ import javax.swing.JMenu;
 import javax.swing.JSeparator;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.BoxLayout;
+import java.awt.GridLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import javax.swing.JPasswordField;
+import java.awt.Component;
+import javax.swing.JButton;
+import java.awt.Font;
 
 
 public class myGUI extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -97,6 +105,11 @@ public class myGUI extends JFrame {
 		mnView.add(mntmGoogleMap);
 		
 		JMenuItem mntmGoogleEarth = new JMenuItem("Google Earth");
+		mntmGoogleEarth.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GoogleEarth.run();
+			}
+		});
 		mnView.add(mntmGoogleEarth);
 		
 		JMenu mnHelp = new JMenu("Help");
@@ -113,22 +126,54 @@ public class myGUI extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.NORTH);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		contentPane.add(panel, BorderLayout.CENTER);
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		
-		JLabel name = new JLabel("name");
-		name.setHorizontalAlignment(SwingConstants.LEFT);
-		panel.add(name);
+		JPanel panel_2 = new JPanel();
+		FlowLayout flowLayout_2 = (FlowLayout) panel_2.getLayout();
+		flowLayout_2.setVgap(80);
+		panel.add(panel_2);
+		
+		JLabel lblUserName = new JLabel("User Name");
+		lblUserName.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		lblUserName.setHorizontalAlignment(SwingConstants.CENTER);
+		lblUserName.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(lblUserName);
 		
 		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(textField);
-		textField.setColumns(15);
+		textField.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("last_name");
-		panel.add(lblNewLabel);
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		lblPassword.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPassword.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(lblPassword);
 		
-		textField_1 = new JTextField();
-		panel.add(textField_1);
-		textField_1.setColumns(15);
+		passwordField = new JPasswordField();
+		passwordField.setColumns(10);
+		passwordField.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(passwordField);
+		
+		JButton btnLogin = new JButton("Login");
+		btnLogin.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(btnLogin);
+		
+		JPanel panel_4 = new JPanel();
+		FlowLayout flowLayout_3 = (FlowLayout) panel_4.getLayout();
+		flowLayout_3.setVgap(80);
+		flowLayout_3.setHgap(50);
+		panel.add(panel_4);
+		
+		JPanel panel_1 = new JPanel();
+		FlowLayout flowLayout = (FlowLayout) panel_1.getLayout();
+		flowLayout.setHgap(75);
+		contentPane.add(panel_1, BorderLayout.WEST);
+		
+		JPanel panel_3 = new JPanel();
+		FlowLayout flowLayout_1 = (FlowLayout) panel_3.getLayout();
+		flowLayout_1.setHgap(75);
+		contentPane.add(panel_3, BorderLayout.EAST);
 	}
 }

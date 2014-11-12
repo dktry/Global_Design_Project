@@ -7,16 +7,14 @@ import java.awt.*;
 
 public class GoogleEarth {
 
-    public static void main(String args[]){
+    public static void run(){
         final Browser browser = BrowserFactory.create();
+        
         JPanel toolBar = new JPanel();
 
 
         JFrame frame = new JFrame();
-
-
-        frame.add(browser.getView().getComponent(), BorderLayout.CENTER);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         frame.add(browser.getView().getComponent(), BorderLayout.CENTER);
         frame.add(toolBar, BorderLayout.NORTH);
         frame.setSize(700, 500);
