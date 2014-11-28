@@ -12,6 +12,9 @@
     </script>
     <script type="text/javascript">
       var map;
+      var markers = [['London Eye, London', 41.0056477, 29.0157830]];
+      var infoWindowContent = [["<h3>London Eye</h3>" +
+                                "<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>"]]; 
       function initialize() {
           var bounds = new google.maps.LatLngBounds();
           var mapOptions = {
@@ -22,31 +25,15 @@
           
           // Display a map on the page
 		  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); 
+         
 		  //map.setTilt(45);
 		  
 		  // Multiple Markers
 		  //$GPGLL,4916.45,N,12311.12,W,225444,A
-		  var markers = [
-		      ['London Eye, London', 51.503454,-0.119562],
-		      ['Palace of Westminster, London', 51.499633,-0.124755],
-		      ['GPGLL', 51.489633,-0.139562]
-		  ];
+		  
 		  
 		  // Info Window Content
-		  var infoWindowContent = [
-		      ['<div class="info_content">' +
-			      '<h3>London Eye</h3>' +
-			      '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' + 
-			      '</div>'],
-		      ['<div class="info_content">' +
-			      '<h3>Palace of Westminster</h3>' +
-			      '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-			      '</div>'],
-		      ['<div class="info_content">' +
-			      '<h3>GPGLL</h3>' +
-			      '<p>It is perfectly working now, well done! ;).</p>' +
-			      '</div>']
-		  ];
+		 
 		  
 		  // Display multiple markers on a map
 		  var infoWindow = new google.maps.InfoWindow(), marker, i;

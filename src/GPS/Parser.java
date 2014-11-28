@@ -15,7 +15,7 @@ public class Parser {
 	private List<GPGLL> gpgll = new ArrayList<GPGLL>();
 
 	
-	public void parser() {
+	public List<GPGLL> parser() {
 		Charset charset = Charset.forName("US-ASCII");
 		Path filePath = Paths.get(System.getProperty("user.dir"), "/data/gps_data");
 		try (BufferedReader reader = Files.newBufferedReader(filePath, charset)) {
@@ -23,7 +23,6 @@ public class Parser {
 		    while ((line = reader.readLine()) != null) {
 		    	if (line.startsWith("$GPGGA")) {
 		    		GPGGA current_gpggaData = Parser.gpggaParser(line);
-		    		System.out.println(current_gpggaData);
 		    		gpgga.add(current_gpggaData);
 		    	}
 		    	else if (line.startsWith("$GPGLL")) {
@@ -36,6 +35,7 @@ public class Parser {
 		} catch (IOException x) {
 		    System.err.format("IOException: %s%n", x);
 		}
+		return gpgll;
 		
 	}
 	
@@ -53,11 +53,13 @@ public class Parser {
 	
 	public static GPGLL gpgllParser(String line) {
 		String[] parts = line.split(",");
-		return new GPGLL(Float.parseFloat(parts[1]), 
+		return new GPGLL(Double.parseDouble(parts[1]), 
 						parts[2], 
-						Float.parseFloat(parts[3]), 
+						Double.parseDouble(parts[3]), 
 						parts[4], 
+						parts[5],
 						parts[6]);
+		
 	}
 	
 	
