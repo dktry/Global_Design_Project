@@ -9,7 +9,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 import java.util.List;
 
 public class GoogleMaps {
@@ -22,7 +21,7 @@ public class GoogleMaps {
      */
     private static int zoomValue = 4;
 
-    public static void main(String[] args) {
+    public static void run() {
         final Browser browser = BrowserFactory.create();
 
         JButton zoomInButton = new JButton("Zoom In");
@@ -46,7 +45,8 @@ public class GoogleMaps {
         
         JButton connectButton = new JButton(">>>connect<<<");
         connectButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {            	
+            public void actionPerformed(ActionEvent e) {    
+
             	Parser parser = new Parser();
             	List<GPGLL> gpgll = parser.parser();
             	for (GPGLL gpgllData : gpgll) {

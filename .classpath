@@ -2,11 +2,12 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="/Users/doktoray/Downloads/jxbrowser-4.6-cross-desktop-win_mac_linux/lib/jxbrowser-4.6.jar"/>
-	<classpathentry kind="lib" path="/Users/doktoray/Downloads/jxbrowser-4.6-cross-desktop-win_mac_linux/lib/jxbrowser-linux32-4.6.jar"/>
-	<classpathentry kind="lib" path="/Users/doktoray/Downloads/jxbrowser-4.6-cross-desktop-win_mac_linux/lib/jxbrowser-linux64-4.6.jar"/>
-	<classpathentry kind="lib" path="/Users/doktoray/Downloads/jxbrowser-4.6-cross-desktop-win_mac_linux/lib/jxbrowser-mac-4.6.jar"/>
-	<classpathentry kind="lib" path="/Users/doktoray/Downloads/jxbrowser-4.6-cross-desktop-win_mac_linux/lib/jxbrowser-win-4.6.jar"/>
-	<classpathentry kind="lib" path="/Users/doktoray/Downloads/license.jar"/>
+	<classpathentry kind="lib" path="/Users/doktoray/Documents/workspace_new/Ultra_Low_Power_GSP/external_libs/JxBrowser - 4.x - Emrullah Delibas - Evaluation Licence.jar"/>
+	<classpathentry kind="lib" path="/Users/doktoray/Documents/workspace_new/Ultra_Low_Power_GSP/external_libs/jxbrowser-4.6.jar"/>
+	<classpathentry kind="lib" path="/Users/doktoray/Documents/workspace_new/Ultra_Low_Power_GSP/external_libs/jxbrowser-linux32-4.6.jar"/>
+	<classpathentry kind="lib" path="/Users/doktoray/Documents/workspace_new/Ultra_Low_Power_GSP/external_libs/jxbrowser-linux64-4.6.jar"/>
+	<classpathentry kind="lib" path="/Users/doktoray/Documents/workspace_new/Ultra_Low_Power_GSP/external_libs/jxbrowser-mac-4.6.jar"/>
+	<classpathentry kind="lib" path="/Users/doktoray/Documents/workspace_new/Ultra_Low_Power_GSP/external_libs/jxbrowser-win-4.6.jar"/>
+	<classpathentry kind="lib" path="/Users/doktoray/Documents/workspace_new/Ultra_Low_Power_GSP/external_libs/RXTXcomm.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
